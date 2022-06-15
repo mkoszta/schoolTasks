@@ -20,28 +20,24 @@ function DiakInfo(nev:string, csoport:number, típus:boolean):string{
 document.write(DiakInfo("Minta Márton", 8, true));
 
 function SzovegesErtekeles(jegy:number): [string, string]{
-    let szorgalomSzovegesErtekeles = "";
-    let magatartasSzovegesErtekeles =""
     if (jegy==5){
-        szorgalomSzovegesErtekeles="Példás";
-        magatartasSzovegesErtekeles="Példás";
+        return ["Példás", "Példás"]
     }
     else if (jegy==4){
-        szorgalomSzovegesErtekeles="Jó";
-        magatartasSzovegesErtekeles="Jó";
+        return ["Jó", "Jó"]
     }
     else if (jegy==3){
-        szorgalomSzovegesErtekeles="Változó";
-        magatartasSzovegesErtekeles="Változó";
+        return ["Változó", "Változó"]
     }
     else if (jegy==2){
-        szorgalomSzovegesErtekeles="Hanyag";
-        magatartasSzovegesErtekeles="Rossz";
+        return ["Hanyag", "Rossz"]
     }
-
-    return [szorgalomSzovegesErtekeles, magatartasSzovegesErtekeles]
+    else {
+    return ["Hibás érték", "Hibás érték!"]
 }
-document.write("<br>"+SzovegesErtekeles(2));
+}
+var ertekeles:[string, string]=SzovegesErtekeles(2)
+document.write("<br>A tanuló szorgalmi értékelése: "+ertekeles[0]+"<br>Magatartás jegye: "+ertekeles[1]);
 
 function HarommalOszthatokSzama(tomb:number[]):number{
     let darab:number=0;

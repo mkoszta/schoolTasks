@@ -18,27 +18,24 @@ function DiakInfo(nev, csoport, típus) {
 }
 document.write(DiakInfo("Minta Márton", 8, true));
 function SzovegesErtekeles(jegy) {
-    var szorgalomSzovegesErtekeles = "";
-    var magatartasSzovegesErtekeles = "";
     if (jegy == 5) {
-        szorgalomSzovegesErtekeles = "Példás";
-        magatartasSzovegesErtekeles = "Példás";
+        return ["Példás", "Példás"];
     }
     else if (jegy == 4) {
-        szorgalomSzovegesErtekeles = "Jó";
-        magatartasSzovegesErtekeles = "Jó";
+        return ["Jó", "Jó"];
     }
     else if (jegy == 3) {
-        szorgalomSzovegesErtekeles = "Változó";
-        magatartasSzovegesErtekeles = "Változó";
+        return ["Változó", "Változó"];
     }
     else if (jegy == 2) {
-        szorgalomSzovegesErtekeles = "Hanyag";
-        magatartasSzovegesErtekeles = "Rossz";
+        return ["Hanyag", "Rossz"];
     }
-    return [szorgalomSzovegesErtekeles, magatartasSzovegesErtekeles];
+    else {
+        return ["Hibás érték", "Hibás érték!"];
+    }
 }
-document.write("<br>" + SzovegesErtekeles(2));
+var ertekeles = SzovegesErtekeles(2);
+document.write("<br>A tanuló szorgalmi értékelése: " + ertekeles[0] + "<br>Magatartás jegye: " + ertekeles[1]);
 function HarommalOszthatokSzama(tomb) {
     var darab = 0;
     for (var i = 0; i < tomb.length; i++) {
